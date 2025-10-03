@@ -1,0 +1,207 @@
+/* Footer wrapper */
+.abaad-footer {
+    background-color: var(--primary-dark);
+    padding: 140px 0 28px 0;
+    color: var(--white);
+}
+.footer-container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 166px;
+}
+.abaad-footer-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    align-items: start;
+}
+.abaad-footer-right {
+    padding: 0 0 0 80px;
+}
+/* Columns */
+.abaad-footer-col {
+    color: rgba(255, 255, 255, 0.9);
+}
+.abaad-footer-center {
+    text-align: center;
+}
+
+/* Headings */
+.abaad-footer h3 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 28px;
+    color: var(--white);
+}
+
+/* Links */
+.abaad-footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-size: 18px;
+    font-weight: 400;
+}
+.abaad-footer-links a {
+    color: var(--white);
+}
+.abaad-footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Description */
+.abaad-footer-desc {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+    color: var(--white);
+    margin: 28px 0 0 0;
+}
+
+.abaad-footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+}
+
+.abaad-footer-socials::before,
+.abaad-footer-socials::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--white);
+}
+
+.abaad-footer-socials a {
+    color: var(--white);
+    font-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.abaad-footer-socials a:hover {
+    transform: scale(1.1);
+}
+
+/* Contact */
+.abaad-footer-contact .abaad-footer-contact-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 28px;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.abaad-footer-contact .abaad-footer-contact-row a {
+    color: var(--white);
+}
+
+.abaad-footer-right-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--white);
+    opacity: 50%;
+    margin: 16px 0 0 0;
+}
+.abaad-footer-right-bottom a {
+    color: var(--white);
+}
+.abaad-footer-right-bottom a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 1560px) {
+    .footer-container {
+        padding: 0 50px;
+    }
+}
+@media (max-width: 1440px) {
+    .abaad-footer h3 {
+        font-size: 26px;
+    }
+    .abaad-footer-links {
+        font-size: 14px;
+    }
+    .abaad-footer-desc {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .abaad-footer-contact .abaad-footer-contact-row {
+        font-size: 18px;
+    }
+    .abaad-footer-right-bottom {
+        font-size: 14px;
+    }
+}
+/* Responsive */
+@media (max-width: 1141px) {
+    .footer-mbl {
+        width: 100%;
+    }
+
+    .abaad-footer-inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .abaad-footer-center {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .abaad-footer-left {
+        order: 2;
+    }
+    .abaad-footer-right {
+        order: 1;
+        text-align: left;
+        margin-top: 4px;
+        padding: 0;
+    }
+    .abaad-footer-inner {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+}
+@media (max-width: 680px) {
+    .abaad-footer-inner {
+        gap: 35px 0;
+    }
+    .footer-container {
+        padding: 50px 20px;
+    }
+    .abaad-footer {
+        padding: 0;
+    }
+
+    .abaad-footer-desc {
+        max-width: 100%;
+        font-size: 14px;
+    }
+    .abaad-footer h3 {
+        font-size: 22px;
+    }
+    .abaad-footer-contact .abaad-footer-contact-row,
+    .abaad-footer-links {
+        font-size: 16px;
+    }
+    .abaad-footer-contact .abaad-footer-contact-row {
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .abaad-footer-right-bottom {
+        font-size: 14px;
+    }
+    .abaad-footer-right-bottom {
+        margin: 30px 0 0 0;
+    }
+}
