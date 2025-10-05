@@ -171,6 +171,7 @@
 html[dir="rtl"] .logo{
     width: 166px;
 }
+
 /* ================== Responsive Breakpoints ================== */
 @media (max-width: 1560px) {
     .header-container {

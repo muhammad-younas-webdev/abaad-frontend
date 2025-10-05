@@ -97,11 +97,9 @@
     font-weight: 400;
     color: var(--white);
 }
-
 .abaad-footer-contact .abaad-footer-contact-row a {
     color: var(--white);
 }
-
 .abaad-footer-right-bottom {
     display: flex;
     align-items: center;

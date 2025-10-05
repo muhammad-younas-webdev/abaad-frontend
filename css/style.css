@@ -839,14 +839,10 @@ button {
     text-transform: capitalize;
     color: var(--text-dark);
 }
-
-/* When active → adjust bottom padding */
 .faq-item.active .faq-question {
     padding: 24px 30px 6px 30px;
     /* top right bottom left */
 }
-
-/* Arrow (if you use it) */
 .faq-question .arrow {
     transition: transform 0.28s ease;
     display: inline-block;

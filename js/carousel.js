@@ -35,18 +35,12 @@ function initSwiper() {
         }
         window.mySwiper = null;
     }
-
-    // create new instance
     window.mySwiper = new Swiper(".mySwiper", swiperConfig);
-
-    // set language direction according to current document dir
     const dir = document.documentElement.getAttribute("dir") === "rtl" ? "rtl" : "ltr";
 
     if (window.mySwiper && typeof window.mySwiper.changeLanguageDirection === "function") {
-        // preferred: use the built-in method
         window.mySwiper.changeLanguageDirection(dir);
     } else {
-        // fallback: re-update and try to fix layout
         window.mySwiper.update?.();
     }
 

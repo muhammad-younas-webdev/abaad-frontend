@@ -28,7 +28,6 @@ function changeLang() {
     img.setAttribute("src", arabicSrc);
   });
 }
-
 // Auto-apply if URL contains "/ar/"
 document.addEventListener("DOMContentLoaded", function () {
   const url = window.location.pathname;
