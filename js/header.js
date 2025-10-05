@@ -1,53 +1,62 @@
-// Hamburger Mobile Menu
 const mobileButton = document.getElementById("mobile-menu-button");
 const navLinks = document.getElementById("nav-links");
-
-mobileButton.addEventListener("click", () => {
-    navLinks.classList.toggle("show"); // Slide in/out
-    mobileButton.classList.toggle("active"); // Animate hamburger
-});
-
-// Language Dropdown
+const overlay = document.getElementById("menu-overlay");
 const languageSelector = document.getElementById("language-selector");
-const dropdownMenu = languageSelector.querySelector(".dropdown-menu");
 const currentFlag = document.getElementById("current-flag");
 const currentLang = document.getElementById("current-lang");
+const dropdownLinks = languageSelector.querySelectorAll(".dropdown-menu a");
 
-// Mobile: toggle dropdown on click
-languageSelector.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (window.innerWidth < 768) {
-        const isShown = dropdownMenu.style.opacity === "1";
-        dropdownMenu.style.opacity = isShown ? 0 : 1;
-        dropdownMenu.style.transform = isShown ? "translateY(20px)" : "translateY(0)";
-        dropdownMenu.style.pointerEvents = isShown ? "none" : "auto";
+// Toggle mobile menu
+mobileButton.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    mobileButton.classList.toggle("active");
+    overlay.classList.toggle("show");
+
+    if (!navLinks.classList.contains("show")) {
+        languageSelector.classList.remove("open");
     }
 });
 
-// Select a language and update current flag + text
-dropdownMenu.querySelectorAll("a").forEach((link) => {
+// Close menu when clicking overlay
+overlay.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+    mobileButton.classList.remove("active");
+    overlay.classList.remove("show");
+    languageSelector.classList.remove("open");
+});
+
+// Close menu on resize
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1341) {
+        navLinks.classList.remove("show");
+        mobileButton.classList.remove("active");
+        overlay.classList.remove("show");
+        languageSelector.classList.remove("open");
+    }
+});
+
+// Toggle dropdown (mobile only)
+languageSelector.addEventListener("click", (e) => {
+    if (window.innerWidth <= 1341) {
+        // agar click flag/span/arrow pe hua hai to hi toggle karo
+        if (!e.target.closest(".dropdown-menu")) {
+            e.preventDefault();
+            languageSelector.classList.toggle("open");
+        }
+    }
+});
+
+// Handle language select
+dropdownLinks.forEach(link => {
     link.addEventListener("click", (e) => {
         e.preventDefault();
-        const flag = link.getAttribute("data-flag");
-        const lang = link.getAttribute("data-lang");
 
-        currentFlag.src = flag;
-        currentLang.textContent = lang;
+        const newFlag = link.getAttribute("data-flag");
+        const newLang = link.getAttribute("data-lang");
 
-        // Hide dropdown on mobile after selection
-        if (window.innerWidth < 768) {
-            dropdownMenu.style.opacity = 0;
-            dropdownMenu.style.transform = "translateY(20px)";
-            dropdownMenu.style.pointerEvents = "none";
-        }
+        currentFlag.src = newFlag;
+        currentLang.textContent = newLang;
+
+        languageSelector.classList.remove("open");
     });
-});
-
-// Close mobile dropdown if clicked outside
-window.addEventListener("click", () => {
-    if (window.innerWidth < 768) {
-        dropdownMenu.style.opacity = 0;
-        dropdownMenu.style.transform = "translateY(20px)";
-        dropdownMenu.style.pointerEvents = "none";
-    }
 });

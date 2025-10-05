@@ -18,13 +18,11 @@ faqItems.forEach((item) => {
     const question = item.querySelector(".faq-question");
     const answer = item.querySelector(".faq-answer");
 
-    // Open active items on page load
     if (item.classList.contains("active")) {
         answer.style.maxHeight = answer.scrollHeight + "px";
     }
 
     question.addEventListener("click", () => {
-        // Close all other items
         faqItems.forEach((i) => {
             if (i !== item) {
                 i.classList.remove("active");
@@ -32,7 +30,6 @@ faqItems.forEach((item) => {
             }
         });
 
-        // Toggle current item
         item.classList.toggle("active");
 
         if (item.classList.contains("active")) {
@@ -42,6 +39,7 @@ faqItems.forEach((item) => {
         }
     });
 });
+
 
 // Select button and target
 const scrollBtn = document.querySelector(".scroll-down-btn");
