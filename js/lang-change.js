@@ -8,29 +8,34 @@
 // });
 
 function changeLang() {
-  // add arabic class and rtl
+  // Add Arabic class and RTL direction
   document.body.classList.add("arabic-lang");
   document.documentElement.setAttribute("dir", "rtl");
 
-  // swap text with arabic
+  // 🔹 Swap English ↔ Arabic text for all elements
   document.querySelectorAll("[data-ar-lang]").forEach((el) => {
-    const englishText = el.textContent.trim(); // current visible text
-    const arabicText = el.getAttribute("data-ar-lang"); // from attribute
-
-    // put english back into attr
+    const englishText = el.textContent.trim();
+    const arabicText = el.getAttribute("data-ar-lang");
     el.setAttribute("data-ar-lang", englishText);
-
-    // replace content with arabic
     el.textContent = arabicText;
+  });
+
+  // 🔹 Swap all images that have Arabic versions
+  document.querySelectorAll("img[data-ar-logo]").forEach((img) => {
+    const englishSrc = img.getAttribute("src");
+    const arabicSrc = img.getAttribute("data-ar-logo");
+    img.setAttribute("data-ar-logo", englishSrc);
+    img.setAttribute("src", arabicSrc);
   });
 }
 
+// Auto-apply if URL contains "/ar/"
 document.addEventListener("DOMContentLoaded", function () {
   const url = window.location.pathname;
-
   if (url.includes("/ar/") || url.endsWith("/ar")) {
     changeLang();
   }
 });
 
-changeLang();
+
+changeLang(); 

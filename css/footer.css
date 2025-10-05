@@ -119,6 +119,17 @@
 .abaad-footer-right-bottom a:hover {
     text-decoration: underline;
 }
+html[dir="rtl"] .abaad-footer-right{
+    padding: 0;
+    text-align: end;
+}
+html[dir="rtl"] .abaad-footer-contact .abaad-footer-contact-row{
+    flex-direction: row-reverse;
+}
+.abaad-footer-contact-row a {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
 @media (max-width: 1560px) {
     .footer-container {
         padding: 0 50px;
@@ -170,6 +181,12 @@
     .abaad-footer-inner {
         flex-direction: column-reverse;
         gap: 50px;
+    }
+    html[dir="rtl"] .abaad-footer-right{
+        text-align:right;
+    }
+    html[dir="rtl"] .abaad-footer-contact .abaad-footer-contact-row{
+        flex-direction: row;
     }
 }
 @media (max-width: 680px) {

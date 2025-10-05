@@ -75,9 +75,10 @@ button {
     font-size: 60px;
     color: var(--primary-light);
     font-weight: 700;
+    width: 85%;
 }
 
-.hero-empower-mining h1 span {
+.hero-empower-mining h1 .white-text {
     color: var(--white);
 }
 
@@ -87,6 +88,7 @@ button {
     font-weight: 400;
     line-height: 28px;
     padding: 18px 0 32px 0;
+    width: 64%;
 }
 
 .cta-section {
@@ -417,7 +419,7 @@ button {
 }
 
 .story-vision-right h2 {
-    text-align: left;
+    text-align: start;
 }
 
 .vision-sub-heading {
@@ -934,6 +936,40 @@ button {
 .demo-left img {
     height: 450px;
 }
+html[dir="rtl"] .deliver-section__cards {
+  flex-direction: row-reverse;
+}
+/* Rotate the arrow icon */
+html[dir="rtl"] .mining-impact-button svg,
+html[dir="rtl"] .cta-button svg{
+  transform: rotate(180deg);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+html[dir="rtl"] .values-line {
+    background: url(../assets/images/dashed-border-rtl.svg) no-repeat center;
+    background-size: contain;
+}
+html[dir="rtl"] .innovation {
+    left: 90%;
+}
+
+html[dir="rtl"] .sustainability {
+    left: 70%;
+}
+
+html[dir="rtl"] .transparency {
+    left: 50%;
+}
+
+html[dir="rtl"] .commitment {
+    left: 30%;
+}
+
+html[dir="rtl"] .partnership {
+    left: 10%;
+}
+
 
 @media (max-width: 1560px) {
 
@@ -1122,7 +1158,7 @@ button {
     }
 
     .hero-empower-mining h1 {
-        font-size: 48px;
+        font-size: 46px;
     }
 
     .hero-empower-mining p {
@@ -1244,26 +1280,22 @@ button {
         font-size: 16px;
         line-height: 26px;
     }
+
 }
 
 @media (max-width: 990px) {
     .story-vision-left {
         width: 100%;
     }
-
-    .hero-empower-mining h1 br {
-        display: none;
-    }
-
-    .hero-empower-mining p br {
-        display: none;
-    }
-
     .deliver-section__cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-
+    .hero-empower-mining p,
+     .hero-empower-mining h1{
+        width: 100%;
+     }
+     html[dir="rtl"] .values-line,
     .values-line {
         position: unset;
         width: 100%;

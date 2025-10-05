@@ -168,6 +168,9 @@
     align-items: center;
     gap: 10px;
 }
+html[dir="rtl"] .logo{
+    width: 166px;
+}
 /* ================== Responsive Breakpoints ================== */
 @media (max-width: 1560px) {
     .header-container {
@@ -175,6 +178,7 @@
     }
 }
 @media (max-width: 1440px) {
+    html[dir="rtl"] .logo,
     .logo {
         width: 170px;
     }
@@ -259,6 +263,7 @@
     .header-container {
         padding: 0 20px;
     }
+    html[dir="rtl"] .logo,
     .logo {
         width: 40%;
     }
