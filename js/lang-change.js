@@ -6,7 +6,6 @@
 //     document.documentElement.setAttribute("dir", "rtl");
 //   }
 // });
-
 function changeLang() {
   document.body.classList.add("arabic-lang");
   document.documentElement.setAttribute("dir", "rtl");

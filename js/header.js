@@ -47,7 +47,6 @@ languageSelector.addEventListener("click", (e) => {
     }
   }
 });
-
 // --- Handle flag and label change only (no text/RTL swap) ---
 dropdownLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
