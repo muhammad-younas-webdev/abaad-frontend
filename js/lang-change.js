@@ -1,11 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   const url = window.location.pathname;
-
-//   if (url.includes("/ar/") || url.endsWith("/ar")) {
-//     document.body.classList.add("arabic-lang");
-//     document.documentElement.setAttribute("dir", "rtl");
-//   }
-// });
 function changeLang() {
   document.body.classList.add("arabic-lang");
   document.documentElement.setAttribute("dir", "rtl");
@@ -38,5 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-changeLang(); 
+document.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("lang") === "ar") {
+    changeLang();
+  }
+});

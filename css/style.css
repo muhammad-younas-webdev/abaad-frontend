@@ -806,6 +806,56 @@ button {
     background-color: #c8a960;
 }
 
+.primary-bg.revert-colors {
+    background-color: #0c4538;
+    background-color: #ffffff;
+
+    .benefits-main .heading-wrapper {
+        color: #dcb979;
+        color: #0c4538;
+    }
+
+    .mining-impact {}
+
+    .mining-impact-card {
+        border: 1px solid #dfba78;
+        border: 1px solid #0c4538;
+    }
+
+    .mining-impact-card h2 {
+        color: var(--white);
+        color: #0c4538;
+    }
+
+    .mining-impact-card p {
+        color: var(--white);
+        color: #0c4538;
+    }
+
+    .mining-impact-card:hover {
+        background-color: var(--white);
+        border-color: var(--white);
+        background-color: #0c4538;
+        border-color: #0c4538;
+    }
+
+    .mining-impact-card:hover p,
+    .mining-impact-card:hover h2 {
+        color: #dfba78;
+    }
+
+    .mining-impact-button {
+        background-color: #dcb979;
+        background-color: #0c4538;
+        color: #0c4538;
+        color: var(--white);
+    }
+
+    .mining-impact-button:hover {
+        background-color: #c8a960;
+    }
+}
+
 .bg-primary-light-2 {
     background-color: var(--background-light);
     border-bottom: 10px solid #dfba78;
@@ -839,10 +889,12 @@ button {
     text-transform: capitalize;
     color: var(--text-dark);
 }
+
 .faq-item.active .faq-question {
     padding: 24px 30px 6px 30px;
     /* top right bottom left */
 }
+
 .faq-question .arrow {
     transition: transform 0.28s ease;
     display: inline-block;
@@ -932,20 +984,24 @@ button {
 .demo-left img {
     height: 450px;
 }
+
 html[dir="rtl"] .deliver-section__cards {
-  flex-direction: row-reverse;
+    flex-direction: row-reverse;
 }
+
 /* Rotate the arrow icon */
 html[dir="rtl"] .mining-impact-button svg,
-html[dir="rtl"] .cta-button svg{
-  transform: rotate(180deg);
-  transform-origin: center;
-  transition: transform 0.2s ease;
+html[dir="rtl"] .cta-button svg {
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: transform 0.2s ease;
 }
+
 html[dir="rtl"] .values-line {
     background: url(../assets/images/dashed-border-rtl.svg) no-repeat center;
     background-size: contain;
 }
+
 html[dir="rtl"] .innovation {
     left: 90%;
 }
@@ -965,7 +1021,6 @@ html[dir="rtl"] .commitment {
 html[dir="rtl"] .partnership {
     left: 10%;
 }
-
 
 @media (max-width: 1560px) {
 
@@ -1276,22 +1331,24 @@ html[dir="rtl"] .partnership {
         font-size: 16px;
         line-height: 26px;
     }
-
 }
 
 @media (max-width: 990px) {
     .story-vision-left {
         width: 100%;
     }
+
     .deliver-section__cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
     .hero-empower-mining p,
-     .hero-empower-mining h1{
+    .hero-empower-mining h1 {
         width: 100%;
-     }
-     html[dir="rtl"] .values-line,
+    }
+
+    html[dir="rtl"] .values-line,
     .values-line {
         position: unset;
         width: 100%;

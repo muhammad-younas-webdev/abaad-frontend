@@ -42,7 +42,7 @@ window.addEventListener("resize", () => {
 languageSelector.addEventListener("click", (e) => {
   if (window.innerWidth <= 1341) {
     if (!e.target.closest(".dropdown-menu")) {
-      e.preventDefault();
+      // e.preventDefault();
       languageSelector.classList.toggle("open");
     }
   }
@@ -50,7 +50,7 @@ languageSelector.addEventListener("click", (e) => {
 // --- Handle flag and label change only (no text/RTL swap) ---
 dropdownLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     const newFlag = link.getAttribute("data-flag");
     const newLang = link.getAttribute("data-lang");
